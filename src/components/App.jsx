@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useCallback } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
@@ -14,13 +13,13 @@ const App = () => {
   const [hasMoreImages, setHasMoreImages] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const handleSearchSubmit = useCallback((searchQuery) => {
-    setQuery(searchQuery);
-    setImages([]);
-    setCurrentPage(1);
-    setHasMoreImages(true);
-    fetchImages(searchQuery, 1);
-  }, []);
+const handleSearchSubmit = useCallback((searchQuery) => {
+  setQuery(searchQuery);
+  setImages([]);
+  setCurrentPage(1);
+  setHasMoreImages(true);
+  fetchImages(searchQuery, 1);
+}, []);
 
   const fetchImages = useCallback((searchQuery, page) => {
     setLoading(true);
