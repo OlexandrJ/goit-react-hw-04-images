@@ -18,7 +18,7 @@ const handleSearchSubmit = useCallback((searchQuery) => {
   setImages([]);
   setCurrentPage(1);
   setHasMoreImages(true);
-  fetchImages(searchQuery, 1);
+  // fetchImages(searchQuery, 1);
 }, []);
 
   const fetchImages = useCallback((searchQuery, page) => {
